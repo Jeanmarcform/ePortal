@@ -105,16 +105,19 @@ document.addEventListener("DOMContentLoaded", function() {
     };
 
     // Play video on login success
-window.playVideo = function() {
-    const videoModal = document.getElementById('videoModal');
-    videoModal.style.display = 'block';  // Show the video modal
-    video.play();  // Play the video
-};
-    
-// Close video modal and stop video
+    window.playVideo = function() {
+        const videoModal = document.getElementById('videoModal');
+        const video = document.getElementById('loginVideo');
+        videoModal.style.display = 'block';  // Show the video modal
+        video.play();  // Play the video
+    };
+
+    // Close video modal and stop video
     window.closeVideoModal = function() {
+        const video = document.getElementById('loginVideo');
         video.pause();  // Pause the video
         video.currentTime = 0;  // Reset the video to the beginning
+        const videoModal = document.getElementById('videoModal');
         videoModal.style.display = 'none';  // Hide the video modal
     };
 });
