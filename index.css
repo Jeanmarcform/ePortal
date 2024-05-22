@@ -241,9 +241,9 @@ footer {
     }
     /* Transition for the navigation links */
 .nav-links {
-    display: flex;
+    display: none;
     flex-direction: column;
-    transition: max-height 1s ease;
+    transition: max-height 0.75s ease-out;
     overflow: hidden; /* Hide overflow content */
     max-height: 0; /* Collapsed state */
 }
@@ -323,12 +323,16 @@ footer {
 /* Overlay Text in video */
 .overlay-text {
     position: absolute;
-    top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
+    font-size: 50px;
+    font-weight: bold;
     color: white;
-    font-size: 3em;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
-    pointer-events: none;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
 }
     
