@@ -1,0 +1,334 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 0;
+    background: #f5f5f5;
+}
+nav {
+    background-color: #333;
+    color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 10px 0;
+}
+.menu-toggle {
+  display: flex; /* Changed to flex to make it visible */
+  position: absolute;
+  top: 14px;
+  left: 16px;
+  cursor: pointer;
+  font-size: 1.5em;
+  color: black;
+  align-items: center; /* Center the icon and text vertically */
+}
+.menu-toggle i {
+  margin-right: 2px; /* Add spacing between the icon and the text */
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+li {
+    display: inline;
+}
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+li a:hover {
+    background-color: #111;
+}
+.logo img {
+    width: 50px;
+    height: auto;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+li a .fas {
+    margin-right: 8px;
+}
+header {
+    text-align: center;
+    margin: 80px 0 20px; /* Adjusted for fixed navbar */
+}
+header h2 {
+    font-size: 3em;
+    color: black;
+    margin: 20px 0;
+}
+main {
+    padding-top: 100px; /* Added padding to ensure content is visible below the fixed navbar */
+}
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    padding: 20px;
+    background: url('img.jpg.jpg') no-repeat center center/cover;
+}
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+}
+.form-box {
+    position: relative;
+    width: 90%;
+    max-width: 400px;
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+h2 {
+    font-size: 2em;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.inputbox {
+    position: relative;
+    margin: 30px 0;
+    width: 100%;
+    border-bottom: 2px solid #fff;
+}
+.inputbox label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 1em;
+    pointer-events: none;
+    transition: .5s;
+}
+input:focus ~ label,
+input:valid ~ label {
+    top: -5px;
+    left: 0;
+    font-size: 0.75em;
+}
+.inputbox input {
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    padding: 0 35px 0 5px;
+    color: #fff;
+}
+.inputbox ion-icon {
+    position: absolute;
+    right: 8px;
+    color: #fff;
+    font-size: 1.2em;
+    top: 20px;
+}
+.forget {
+    margin: 10px 0 15px;
+    font-size: .9em;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.forget label {
+    display: flex;
+    align-items: center;
+}
+.forget label input {
+    margin-right: 10px;
+}
+.forget a {
+    color: darkred;
+    text-decoration: none;
+}
+.forget a:hover {
+    text-decoration: underline;
+}
+button {
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    background: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    color: #333;
+    margin-top: 20px;
+}
+button:focus {
+    outline: 2px solid #333;
+}
+.register {
+    font-size: .9em;
+    color: #fff;
+    text-align: center;
+    margin: 25px 0 10px;
+}
+.register p a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+}
+.register p a:hover {
+    text-decoration: underline;
+}
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background: #333;
+    color: white;
+    position: relative;
+    width: 100%;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 60px;
+}
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+}
+.modal-content img {
+    max-width: 100%;
+    height: auto;
+}
+/* Media Queries for responsive design */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+    /* Transition for the navigation links */
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    transition: max-height 1s ease;
+    overflow: hidden; /* Hide overflow content */
+    max-height: 0; /* Collapsed state */
+}
+.nav-links.active {
+    display: flex;
+    max-height: 500px; /* Adjust according to your menu's height */
+}
+    .nav-links {
+        display: none;
+        flex-direction: column;
+    }
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+    .nav-links li a {
+        padding: 10px 0;
+    }
+    header h2 {
+        font-size: 2em;
+    }
+    section {
+        padding: 10px;
+    }
+    .form-box {
+        padding: 20px;
+    }
+}
+/* Larger screen adjustments */
+@media (min-width: 769px) {
+    .menu-toggle {
+        display: none; /* Hide on desktop */
+    }
+    .form-box {
+        max-width: 600px;
+        padding: 60px;
+    }
+}
+/* Transition for smoother visual effect */
+#loginForm, #registerForm {
+  transition: all 0.75s ease-out;
+}
+/* Center the forms */
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh; /* Ensure container is full height */
+}
+/* Video Modal */
+#videoModal .close {
+    color: red;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    #videoModal .modal-content {
+        width: 90%;
+    }
+}
+@media screen and (max-width: 480px) {
+    #videoModal .modal-content {
+        width: 95%;
+    }
+}
+/* Responsive Video */
+#loginVideo {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+/* Overlay Text in video */
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 3em;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    pointer-events: none;
+}
+    
